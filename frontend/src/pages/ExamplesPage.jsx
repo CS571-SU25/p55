@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import KeywordPrompt from '../components/KeywordPrompt';
 import ContactInfo from '../components/ContactInfo';
 
 export default function ExamplesPage() {
@@ -14,6 +15,7 @@ export default function ExamplesPage() {
         <div style={{ padding: '1rem' }}>
             <h1>Sample Prompts</h1>
             <Link to="/chat">← Back to Chat</Link>
+            <KeywordPrompt />
             <ul style={{ marginTop: '1rem' }}>
                 {samplePrompts.map((p, idx) => (
                     <li key={idx}><strong>{p.category}:</strong> {p.text}</li>

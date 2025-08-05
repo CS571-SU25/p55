@@ -33,7 +33,6 @@ export default function ChatPage() {
         <div style={{ padding: '1rem' }}>
             <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <h1>Chat</h1>
-                <button onClick={handleLogout} style={{ background: 'none', border: 'none', cursor: 'pointer' }}>Logout</button>
             </header>
             <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem' }}>
                 <div style={{ flex: 1, border: '1px solid #ddd', padding: '1rem', borderRadius: '4px' }}>

@@ -1,16 +1,12 @@
-// ========================================================
-// File: src/components/NavBar.jsx
-// ========================================================
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.png'; // Ensure logo.png is in src/assets/
+import logo from '../assets/logo.png';
 
-export default function NavBar() {
-    const user = sessionStorage.getItem('user');
+export default function NavBar({ user, onLogout }) {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        sessionStorage.removeItem('user');
+        onLogout();
         navigate('/');
     };
 
@@ -30,8 +26,8 @@ export default function NavBar() {
                     style={{ height: '40px', width: 'auto', marginRight: '0.5rem' }}
                 />
                 <span className="navbar-title" style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
-          AIBox
-        </span>
+                    AIBox
+                </span>
             </div>
             <ul className="navbar-links" style={{
                 display: 'flex',
@@ -44,6 +40,7 @@ export default function NavBar() {
                     <>
                         <li><Link to="/chat" style={{ textDecoration: 'none', color: '#333' }}>Chat</Link></li>
                         <li><Link to="/examples" style={{ textDecoration: 'none', color: '#333' }}>Examples</Link></li>
+                        <li><Link to="/evaluate" style={{ textDecoration: 'none', color: '#333' }}>Evaluate</Link></li>
                         <li><button onClick={handleLogout} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#333' }}>Logout</button></li>
                     </>
                 ) : (
